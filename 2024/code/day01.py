@@ -1,9 +1,4 @@
-from common import (
-    print_title,
-    print_solutions,
-    read_file,
-    count_frequency
-)
+from common import print_title, print_solutions, read_file, count_frequency
 
 DAY = 1
 INPUT_FILE = "day01.txt"
@@ -41,10 +36,7 @@ def main():
     input = read_file(INPUT_FILE)
     list1, list2 = parse_input(input)
 
-    print_solutions([
-        part1(list1, list2),
-        part2(list1, list2)
-    ])
+    print_solutions([part1(list1, list2), part2(list1, list2)])
 
 
 if __name__ == "__main__":

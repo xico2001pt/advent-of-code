@@ -4,18 +4,17 @@ INPUTS_FOLDER_NAME = "input"
 
 
 INPUT_FOLDER_PATH = os.path.join(
-    os.path.dirname(os.path.dirname(__file__)),
-    INPUTS_FOLDER_NAME
+    os.path.dirname(os.path.dirname(__file__)), INPUTS_FOLDER_NAME
 )
 
 
 def print_title(day: int):
-    print(f'Day {day} Solutions:')
+    print(f"Day {day} Solutions:")
 
 
 def print_solutions(solutions: list[str]):
     for i, s in enumerate(solutions):
-        print(f'    - Part {i+1}: {s}')
+        print(f"    - Part {i+1}: {s}")
 
 
 def read_file(filename: str):
