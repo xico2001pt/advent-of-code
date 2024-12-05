@@ -29,3 +29,22 @@ def count_frequency(input: list) -> dict:
         else:
             freq_dict[item] = 1
     return freq_dict
+
+
+def get_overlapping_blocks(
+    values: list[list], block_size: tuple[int, int]
+) -> list[list[list]]:
+    num_rows = len(values)
+    num_cols = len(values[0])
+    block_height, block_width = block_size
+
+    blocks = []
+    for row in range(num_rows - block_height + 1):
+        for col in range(num_cols - block_width + 1):
+            block = [
+                values[r][col : col + block_width]
+                for r in range(row, row + block_height)
+            ]
+            blocks.append(block)
+
+    return blocks
