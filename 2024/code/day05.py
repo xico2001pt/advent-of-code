@@ -24,7 +24,7 @@ def process_rules(rules: list[tuple[int, int]]) -> dict[set[int]]:
     return processed
 
 
-def sum_middle_elements(targets: list[list[int]]):
+def sum_middle_elements(targets: list[list[int]]) -> int:
     return sum([t[len(t) // 2] for t in targets])
 
 

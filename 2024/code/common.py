@@ -48,3 +48,14 @@ def get_overlapping_blocks(
             blocks.append(block)
 
     return blocks
+
+
+def find_occurrences_matrix(
+    search_space: list[list[str]], target: str
+) -> set[tuple[int, int]]:
+    result = set()
+    for i, row in enumerate(search_space):
+        for j, v in enumerate(row):
+            if v == target:
+                result.add((i, j))
+    return result
