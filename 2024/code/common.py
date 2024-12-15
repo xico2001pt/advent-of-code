@@ -17,6 +17,12 @@ def print_solutions(solutions: list[str]):
         print(f"    - Part {i+1}: {s}")
 
 
+def print_matrix(matrix: list[list]):
+    for row in matrix:
+        print(row)
+    print("")
+
+
 def read_file(filename: str):
     return open(os.path.join(INPUT_FOLDER_PATH, filename)).read()
 
