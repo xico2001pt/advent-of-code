@@ -1,4 +1,3 @@
-from functools import reduce
 from collections import Counter
 from solutions.solution_base import SolutionBase
 
