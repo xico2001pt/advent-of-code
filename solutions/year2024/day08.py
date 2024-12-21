@@ -1,14 +1,7 @@
-from common import print_title, print_solutions, read_file
-import copy
+from solutions.solution_base import SolutionBase
 
-DAY = 8
-INPUT_FILE = "day08.txt"
 
 EMPTY = "."
-
-
-def parse_input(input: str) -> list[list[str]]:
-    return [[c for c in row] for row in input.split("\n")]
 
 
 def is_outside_map(pos: tuple[int, int], y_max: int, x_max: int) -> bool:
@@ -92,22 +85,12 @@ def generate_antinodes_map(
     return antinodes_map
 
 
-def part1(map: list[list[str]]):
-    return sum([sum(row) for row in generate_antinodes_map(map)])
+class Day08(SolutionBase):
+    def load_input(self, input: str):
+        self.map = [[c for c in row] for row in input.split("\n")]
 
+    def part1(self):
+        return sum([sum(row) for row in generate_antinodes_map(self.map)])
 
-def part2(map: list[list[str]]):
-    return sum([sum(row) for row in generate_antinodes_map(map, True)])
-
-
-def main():
-    print_title(DAY)
-
-    input = read_file(INPUT_FILE)
-    map = parse_input(input)
-
-    print_solutions([part1(map), part2(map)])
-
-
-if __name__ == "__main__":
-    main()
+    def part2(self):
+        return sum([sum(row) for row in generate_antinodes_map(self.map, True)])
